@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Felices 2 Años Amor</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts cargando Jacquard 24, Metamorphous y Press Start 2P -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Metamorphous&family=Press+Start+2P&family=Great+Vibes&family=MonteCarlo&family=Alex+Brush&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'Nahla Script';
+            src: local('Nahla Script'), local('NahlaScript'), url('https://fonts.cdnfonts.com/s/98634/NahlaScript.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        *, *::before, *::after {
+            font-family: 'Nahla Script', 'Dancing Script', 'Great Vibes', 'Alex Brush', cursive, serif;
+        }
+
+        .font-jacquard {
+            font-family: 'Jacquard 24', cursive, serif !important;
+        }
+
+        .font-metamorphous {
+            font-family: 'Metamorphous', serif !important;
+        }
+
+        .font-pixel {
+            font-family: 'Press Start 2P', monospace, sans-serif !important;
+        }
+
+        body {
+            background-color: #FFDAB9;
+            touch-action: manipulation;
+            user-select: none;
+            -webkit-user-select: none;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            transition: background-color 1.5s ease-in-out;
+        }
+
+        /* Transición a fondo rojizo romántico para la Etapa 3 */
+        body.theme-red {
+            background-color: #4A0E17 !important;
+        }
+
+        /* Transición a fondo Minecraft para la Etapa 4 */
+        body.theme-minecraft {
+            background-image: url('https://media.discordapp.net/attachments/1563439178903982242/1566558819323215912/608bb71ab84ab09183e605c299080819.png?ex=6ae8fb17&is=6ae7a997&hm=514a21422c0dab1a92bfe0de58631e9639f622cd38ebe17642ef887a3a8557ea&=&format=webp&quality=lossless&width=1155&height=649');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        /* Transición a fondo Cueva para la Etapa 5 */
+        body.theme-cave {
+            background-image: url('https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/46/Cave.png/revision/latest?cb=20211107143808');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        /* Transición a fondo Nether para la Etapa 7 */
+        body.theme-nether {
+            background-image: url('https://static.wikia.nocookie.net/minecraft_gamepedia/images/1/11/Nether.png/revision/latest?cb=20211221091010');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        /* Transición a fondo End para la Etapa 8 */
+        body.theme-end {
+            background-image: url('https://media.vandal.net/i/640x360/6-2020/202062918271542_1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        /* Capa de fondo fija para la transición en disolución con image.svg */
+        #bg-overlay {
+            position: fixed;
+            inset: 0;
+            background-image: url('image.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out, filter 1.5s ease-in-out;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body.show-final #bg-overlay {
+            opacity: 1;
+        }
+
+        body.theme-red #bg-overlay {
+            filter: sepia(0.6) hue-rotate(-50deg) saturate(2.5) brightness(0.6);
+        }
+
+        body.theme-minecraft #bg-overlay,
+        body.theme-cave #bg-overlay,
+        body.theme-nether #bg-overlay,
+        body.theme-end #bg-overlay {
+            opacity: 0 !important;
+        }
+
+        /* Estilo Liquid Glass con tonalidades Minecraft para la Etapa Final (9) */
+        body.theme-mc-glass .liquid-glass-card {
+            background: rgba(30, 45, 30, 0.85) !important;
+            border: 1.5px solid rgba(115, 216, 83, 0.6) !important;
+            box-shadow: 
+                0 12px 32px rgba(27, 38, 18, 0.5),
+                inset 0 1px 2px rgba(115, 216, 83, 0.4),
+                inset 0 -1px 3px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .mobile-frame {
+            width: 90vw;
+            height: 85vh;
+            max-width: 410px;
+            max-height: 730px;
+            aspect-ratio: 9 / 16;
+        }
+
+        .liquid-glass-card {
+            background: rgba(255, 238, 227, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1.5px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 
+                0 12px 32px rgba(165, 125, 89, 0.25),
+                inset 0 1px 2px rgba(255, 255, 255, 0.95),
+                inset 0 -1px 3px rgba(0, 0, 0, 0.05);
+            transition: background 1.5s ease, border-color 1.5s ease, box-shadow 1.5s ease;
+        }
+
+        /* Estilo adaptado al tema rojo */
+        body.theme-red .liquid-glass-card {
+            background: rgba(80, 15, 25, 0.82);
+            border: 1.5px solid rgba(255, 180, 190, 0.4);
+            box-shadow: 
+                0 12px 32px rgba(0, 0, 0, 0.5),
+                inset 0 1px 2px rgba(255, 200, 210, 0.3);
+        }
+
+        /* Estilo pixelart para el contenedor en Etapa 4 */
+        .pixel-card {
+            background: rgba(20, 35, 20, 0.88) !important;
+            border: 4px solid #4a7c2c !important;
+            box-shadow: 0 0 0 4px #1b2612, 0 10px 25px rgba(0, 0, 0, 0.8) !important;
+            border-radius: 4px !important;
+            image-rendering: pixelated;
+        }
+
+        /* Estilo de piedra gris texturizada para la Cueva y Fotos Previas */
+        .cave-card {
+            background: #2b2b33 !important;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                repeating-linear-gradient(45deg, #33333d 0, #33333d 2px, #26262d 0, #26262d 4px) !important;
+            border: 4px solid #1a1a21 !important;
+            box-shadow: 0 0 0 4px #0d0d12, 0 10px 25px rgba(0, 0, 0, 0.9) !important;
+            border-radius: 4px !important;
+            image-rendering: pixelated;
+        }
+
+        /* Estilo de textura del Nether para la Etapa 7 */
+        .nether-card {
+            background: #3b0a0a !important;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                repeating-linear-gradient(45deg, #4a1212 0, #4a1212 2px, #2b0707 0, #2b0707 4px) !important;
+            border: 4px solid #1f0404 !important;
+            box-shadow: 0 0 0 4px #0f0202, 0 10px 25px rgba(0, 0, 0, 0.95) !important;
+            border-radius: 4px !important;
+            image-rendering: pixelated;
+        }
+
+        /* Estilo de textura del End para la Etapa 8 */
+        .end-card {
+            background: #1e112b !important;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                repeating-linear-gradient(45deg, #2a183d 0, #2a183d 2px, #150a20 0, #150a20 4px) !important;
+            border: 4px solid #3b2057 !important;
+            box-shadow: 0 0 0 4px #0a0410, 0 10px 30px rgba(100, 50, 150, 0.6) !important;
+            border-radius: 4px !important;
+            image-rendering: pixelated;
+        }
+
+        .liquid-glass-bar {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1.5px solid rgba(0, 0, 0, 0.25);
+            box-shadow: 
+                0 8px 24px rgba(165, 125, 89, 0.18),
+                inset 0 1px 2px rgba(255, 255, 255, 0.7),
+                inset 0 -1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .liquid-fill {
+            background: linear-gradient(135deg, #A57D59 0%, #8C6241 100%);
+            box-shadow: 0 0 14px rgba(165, 125, 89, 0.75);
+            transition: width 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .heart-beat {
+            animation: pulseHeart 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes pulseHeart {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2) rotate(-2deg); }
+            100% { transform: scale(1); }
+        }
+
+        .fade-out {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+            pointer-events: none;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 1s ease-out, transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .pixel-glitch-out {
+            animation: pixelGlitch 0.6s forwards;
+        }
+
+        @keyframes pixelGlitch {
+            0% {
+                opacity: 1;
+                filter: blur(0px) contrast(1);
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                filter: blur(2px) contrast(3) hue-rotate(90deg);
+                transform: scale(0.98);
+            }
+            100% {
+                opacity: 0;
+                filter: blur(4px) contrast(5);
+                transform: scale(0.95);
+                pointer-events: none;
+            }
+        }
+
+        .soft-bounce-enter {
+            animation: softBounce 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes softBounce {
+            0% {
+                opacity: 0;
+                transform: scale(0.85) translateY(20px);
+            }
+            60% {
+                opacity: 1;
+                transform: scale(1.03) translateY(-4px);
+            }
+            80% {
+                transform: scale(0.98) translateY(2px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .corner-image {
+            transform: rotate(20deg);
+            filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.85)) drop-shadow(0 0 18px rgba(255, 182, 193, 0.7));
+        }
+
+        .photo-frame-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(10deg);
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .old-paper-bg {
+            transform: rotate(90deg);
+            width: 170px;
+            height: 220px;
+            object-fit: fill;
+            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
+        }
+
+        .memory-photo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 175px;
+            height: 105px;
+            object-fit: cover;
+            border: none;
+            border-radius: 2px;
+            mix-blend-mode: multiply;
+        }
+
+        /* Marco medieval interior */
+        .medieval-frame-border {
+            position: absolute;
+            inset: 12px;
+            border: 1px dashed rgba(255, 215, 0, 0.45);
+            border-radius: 2rem;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Vela SVG blanca brillante */
+        .candle-btn-icon {
+            filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 215, 0, 0.7)) drop-shadow(0 0 20px rgba(255, 100, 100, 0.5));
+        }
+
+        /* Contenedor foto + marco Minecraft en Etapa 4 */
+        .mc-photo-wrapper {
+            position: relative;
+            width: 240px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .mc-photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .mc-frame-svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            pointer-events: none;
+            z-index: 5;
+            image-rendering: pixelated;
+        }
+
+        /* Marcos dinámicos para las 2 fotos previas al Nether */
+        .dynamic-photo-frame {
+            position: relative;
+            width: 260px;
+            height: 150px;
+            border: 3px solid #555566;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8), inset 0 0 10px rgba(0,0,0,0.5);
+            border-radius: 4px;
+            overflow: hidden;
+            background: #1a1a22;
+            image-rendering: pixelated;
+        }
+
+        .dynamic-photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: subtleZoom 6s infinite alternate ease-in-out;
+        }
+
+        @keyframes subtleZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.06); }
+        }
+
+        /* Botón Minecraft Continue */
+        .minecraft-continue-btn {
+            background-color: #7A7A7A;
+            border: 3px solid #373737;
+            box-shadow: inset 2px 2px 0px #A0A0A0, inset -2px -2px 0px #555555;
+            color: #FFFFFF;
+            font-family: 'Press Start 2P', monospace;
+            text-shadow: 2px 2px #373737;
+            image-rendering: pixelated;
+            transition: all 0.1s ease;
+        }
+
+        .minecraft-continue-btn:active {
+            background-color: #557A55;
+            box-shadow: inset 2px 2px 0px #335533, inset -2px -2px 0px #77AA77;
+        }
+
+        /* Botón Continue con cambio a Púrpura al hacer click */
+        .nether-continue-btn {
+            background-color: #7A7A7A;
+            border: 3px solid #373737;
+            box-shadow: inset 2px 2px 0px #A0A0A0, inset -2px -2px 0px #555555;
+            color: #FFFFFF;
+            font-family: 'Press Start 2P', monospace;
+            text-shadow: 2px 2px #373737;
+            image-rendering: pixelated;
+            transition: all 0.1s ease;
+        }
+
+        .nether-continue-btn.clicked {
+            background-color: #6b21a8 !important;
+            box-shadow: inset 2px 2px 0px #9333ea, inset -2px -2px 0px #581c87 !important;
+        }
+
+        /* Botón Continue del End con cambio a Verde al hacer click */
+        .end-continue-btn {
+            background-color: #7A7A7A;
+            border: 3px solid #373737;
+            box-shadow: inset 2px 2px 0px #A0A0A0, inset -2px -2px 0px #555555;
+            color: #FFFFFF;
+            font-family: 'Press Start 2P', monospace;
+            text-shadow: 2px 2px #373737;
+            image-rendering: pixelated;
+            transition: all 0.1s ease;
+        }
+
+        .end-continue-btn.clicked {
+            background-color: #16a34a !important;
+            box-shadow: inset 2px 2px 0px #22c55e, inset -2px -2px 0px #15803d !important;
+        }
+
+        /* Franjas superiores fijas */
+        #top-green-banner {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 45px;
+            background: linear-gradient(180deg, #449c2a 0%, #3b8823 100%);
+            border-bottom: 3px solid #1b2612; z-index: 998; display: none; opacity: 0;
+            transition: opacity 0.5s ease-in-out; pointer-events: none; box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        #top-cave-banner {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 45px;
+            background: linear-gradient(180deg, #555566 0%, #333344 100%);
+            border-bottom: 3px solid #1a1a22; z-index: 998; display: none; opacity: 0;
+            transition: opacity 0.5s ease-in-out; pointer-events: none; box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        /* Cascadas de transición */
+        #slime-cascade {
+            position: fixed; inset: 0; z-index: 999; pointer-events: none; display: flex; width: 100vw; height: 100vh;
+        }
+        .slime-column {
+            flex: 1; background: #55b937; border-right: 2px solid #3b8823; border-left: 2px solid #73d853;
+            transform: translateY(-100%); transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #cave-cascade {
+            position: fixed; inset: 0; z-index: 999; pointer-events: none; display: flex; width: 100vw; height: 100vh;
+        }
+        .cave-column {
+            flex: 1; background: #555566; border-right: 2px solid #22222d; border-left: 2px solid #777788;
+            transform: translateY(-100%); transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Pantallas de carga "Generando Mundo" dinámicas */
+        #loading-screen {
+            position: fixed; inset: 0; z-index: 9999; display: none;
+            align-items: center; justify-content: center; opacity: 0;
+            transition: opacity 0.6s ease-in-out; background-size: cover; background-position: center; image-rendering: pixelated;
+        }
+        #loading-screen::after {
+            content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.45);
+        }
+        #loading-text {
+            position: relative; z-index: 10; color: #FFFFFF; font-family: 'Press Start 2P', monospace;
+            font-size: 1.1rem; text-shadow: 3px 3px #000000; letter-spacing: 2px;
+            animation: pulseLoading 1.5s infinite alternate;
+        }
+        @keyframes pulseLoading {
+            0% { opacity: 0.7; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1.02); }
+        }
+
+        .ambient-heart {
+            position: absolute; pointer-events: none; animation: floatUpRandom linear infinite;
+            color: #A57D59; z-index: 1; will-change: transform; transition: color 1.5s ease-in-out;
+        }
+        body.show-final .ambient-heart { color: rgba(255, 255, 255, 0.7); }
+        body.theme-red .ambient-heart { color: rgba(255, 150, 170, 0.7) !important; }
+        body.theme-minecraft .ambient-heart { color: rgba(100, 255, 100, 0.7) !important; }
+        body.theme-cave .ambient-heart { color: rgba(255, 220, 100, 0.7) !important; }
+        body.theme-nether .ambient-heart { color: rgba(255, 100, 100, 0.7) !important; }
+        body.theme-end .ambient-heart { color: rgba(200, 150, 255, 0.7) !important; }
+        body.theme-mc-glass .ambient-heart { color: rgba(115, 216, 83, 0.7) !important; }
+
+        @keyframes floatUpRandom {
+            0% { transform: translateY(110vh) rotate(0deg) scale(var(--heart-scale, 1)); }
+            100% { transform: translateY(-20vh) rotate(360deg) scale(var(--heart-scale, 1)); }
+        }
+    </style>
+</head>
+<body class="relative flex items-center justify-center overflow-hidden bg-[#FFDAB9]">
+
+    <!-- Fondo en disolución con image.svg -->
+    <div id="bg-overlay"></div>
+
+    <!-- Pantalla de carga unificada "Generando Mundo" -->
+    <div id="loading-screen">
+        <div id="loading-text">GENERANDO MUNDO</div>
+    </div>
+
+    <!-- Canción de fondo integrada a partir de la temática Minecraft (Volumen: 67%) -->
+    <audio id="minecraft-bg-music" src="https://docs.google.com/uc?export=download&id=1uE7VI_A5lcqw4G_lGSrT8Refi8RLjgSH" preload="auto" loop></audio>
+
+    <!-- Audio del Portal -->
+    <audio id="minecraft-audio" src="https://discord.com/channels/@me/1563439178903982242/1566643581588996146" preload="auto"></audio>
+
+    <!-- Franjas superiores fijas -->
+    <div id="top-green-banner"></div>
+    <div id="top-cave-banner"></div>
+
+    <!-- Cascada de Slime Minecraft -->
+    <div id="slime-cascade">
+        <div class="slime-column" style="transition-delay: 0s;"></div>
+        <div class="slime-column" style="transition-delay: 0.05s;"></div>
+        <div class="slime-column" style="transition-delay: 0.12s;"></div>
+        <div class="slime-column" style="transition-delay: 0.08s;"></div>
+        <div class="slime-column" style="transition-delay: 0.15s;"></div>
+    </div>
+
+    <!-- Cascada de Cueva Gris -->
+    <div id="cave-cascade">
+        <div class="cave-column" style="transition-delay: 0s;"></div>
+        <div class="cave-column" style="transition-delay: 0.05s;"></div>
+        <div class="cave-column" style="transition-delay: 0.12s;"></div>
+        <div class="cave-column" style="transition-delay: 0.08s;"></div>
+        <div class="cave-column" style="transition-delay: 0.15s;"></div>
+    </div>
+
+    <!-- Corazones flotantes de fondo -->
+    <div id="ambient-hearts-container" class="absolute inset-0 overflow-hidden pointer-events-none z-1"></div>
+
+    <!-- Contenedor principal 9:16 -->
+    <main class="mobile-frame relative flex flex-col items-center justify-center z-10">
+
+        <!-- Pantalla 1: Progreso inicial -->
+        <section id="initial-screen" class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-6 transition-all duration-700">
+            
+            <div class="flex flex-col items-center justify-center w-full mb-3">
+                <h2 id="top-title" class="text-3xl sm:text-4xl text-[#A57D59] mb-2 text-center drop-shadow-sm tracking-wide">
+                    Llena nuestro amor
+                </h2>
+
+                <div class="relative cursor-pointer p-1 touch-manipulation flex items-center justify-center" id="heart-btn" role="button" aria-label="Tocar corazón">
+                    <svg id="heart-svg" class="w-32 h-32 sm:w-36 sm:h-36 text-[#A57D59] filter drop-shadow-[0_10px_18px_rgba(165,125,89,0.3)] transition-transform duration-150 active:scale-90" 
+                         viewBox="0 0 875.65 924.28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M483.24,184.85c33.49-94.2,98.19-162.47,169.46-180.13,9.3-2.3,72.56-16.91,132.78,20.55,66.98,41.66,80.78,117,86.13,146.18,11.78,64.26-4.25,115.3-21.53,168.11-8.85,27.05-26.96,76.13-96.89,186.38-84.31,132.92-115.88,152.84-157.9,241.2-30.29,63.69-45.65,120.15-53.83,157.14-136.27-187.5-229.56-281.36-290.68-332.56-9.74-8.16-49.47-41.04-96.89-91.36-56.23-59.67-92.55-98.2-118.42-157.14-20.07-45.7-55.07-125.42-21.53-208.31C41.98,65.6,108.51,17.43,171.83,7c112.14-18.46,244.93,76.43,294.27,241.2"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="w-11/12 max-w-xs flex flex-col items-center mt-1">
+                <div class="w-full h-5 rounded-full p-0.5 liquid-glass-bar relative overflow-hidden flex items-center">
+                    <div id="progress-bar-fill" class="h-full rounded-full liquid-fill w-0"></div>
+                </div>
+
+                <div class="w-full flex justify-between items-center mt-1.5 px-1 text-xl text-[#A57D59]">
+                    <span>Progreso de amor</span>
+                    <span id="progress-text" class="font-semibold">0%</span>
+                </div>
+
+                <p id="encouraging-text" class="text-xl text-[#A57D59]/90 mt-1 text-center tracking-wide min-h-[1.8rem]">
+                    ¡Toca el corazón para llenar nuestro amor! 💕
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Pantalla 2: Marco final 9:16 -->
+        <section id="final-screen" class="absolute inset-0 w-full h-full flex items-center justify-center opacity-0 pointer-events-none transition-all duration-1000">
+            
+            <div id="main-card-frame" class="w-full h-full liquid-glass-card rounded-[2.5rem] flex flex-col items-center justify-between p-6 text-center shadow-2xl relative overflow-hidden">
+                
+                <!-- Margen medieval sobre todo el marco Liquid Glass -->
+                <div id="medieval-frame-overlay" class="medieval-frame-border hidden opacity-0 transition-opacity duration-1000">
+                    <div class="absolute -top-3 -left-3 text-[#FFB6C1] text-lg">🌿🦋</div>
+                    <div class="absolute -top-3 -right-3 text-[#FFB6C1] text-lg">🦋🌿</div>
+                    <div class="absolute -bottom-3 -left-3 text-[#FFB6C1] text-lg">🍃🦋</div>
+                    <div class="absolute -bottom-3 -right-3 text-[#FFB6C1] text-lg">🦋🍃</div>
+                </div>
+
+                <!-- Imagen en esquina inferior derecha -->
+                <div id="corner-decor" class="absolute bottom-2 right-2 z-20 pointer-events-none transition-opacity duration-700">
+                    <img src="https://cdn.discordapp.com/attachments/1563439178903982242/1566563233576394782/image-Photoroom_1.png?ex=6ae8ff34&is=6ae7adb4&hm=72c991e21aa9503e288767d87bb1d50a8d0bc73ce6ce95b3c337e8c24dd7d1ca&" 
+                         alt="Decoración" 
+                         class="w-28 h-28 sm:w-36 sm:h-36 object-contain corner-image">
+                </div>
+
+                <div id="content-container" class="w-full h-full flex flex-col items-center justify-center my-auto py-2 px-2 transition-all duration-500 z-20">
+                    
+                    <!-- Etapa 1 -->
+                    <div id="text-stage-1" class="w-full flex flex-col items-center justify-center">
+                        <h1 class="text-4xl sm:text-5xl text-[#A57D59] font-jacquard leading-tight drop-shadow-sm mb-3">
+                            Feliz Aniversario
+                        </h1>
+
+                        <p class="text-xl sm:text-2xl text-[#A57D59]/90 font-metamorphous mb-3 tracking-wide">
+                            Te amo con mi alma
+                        </p>
+
+                        <p class="text-base sm:text-lg text-[#A57D59]/90 font-metamorphous leading-relaxed max-w-xs mx-auto mb-4">
+                            Hoy celebramos el dia más maravilloso para ambos. el inicio de una historia de amor hermosa, justo...
+                        </p>
+
+                        <div class="cursor-pointer p-2 touch-manipulation transition-transform duration-150 active:scale-90 inline-block" id="final-heart-btn" role="button" aria-label="Siguiente mensaje">
+                            <svg class="w-10 h-10 sm:w-12 sm:h-12 text-[#A57D59] mx-auto filter drop-shadow-[0_4px_8px_rgba(165,125,89,0.3)]" viewBox="0 0 875.65 924.28" fill="currentColor">
+                                <path d="M483.24,184.85c33.49-94.2,98.19-162.47,169.46-180.13,9.3-2.3,72.56-16.91,132.78,20.55,66.98,41.66,80.78,117,86.13,146.18,11.78,64.26-4.25,115.3-21.53,168.11-8.85,27.05-26.96,76.13-96.89,186.38-84.31,132.92-115.88,152.84-157.9,241.2-30.29,63.69-45.65,120.15-53.83,157.14-136.27-187.5-229.56-281.36-290.68-332.56-9.74-8.16-49.47-41.04-96.89-91.36-56.23-59.67-92.55-98.2-118.42-157.14-20.07-45.7-55.07-125.42-21.53-208.31C41.98,65.6,108.51,17.43,171.83,7c112.14-18.46,244.93,76.43,294.27,241.2"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 2 -->
+                    <div id="text-stage-2" class="w-full flex flex-col items-center justify-center hidden opacity-0 transition-opacity duration-700">
+                        <p class="text-xs sm:text-sm text-[#A57D59]/95 font-metamorphous leading-relaxed max-w-xs mx-auto mb-1">
+                            Feliz Aniversario mi amor, estos 2 años han sido los 2 años mas felices de mi vida, a pesar de todo lo que hemos pasado juntos, no tengo ninguna duda de que eres la persona mas maravillosa que he conocido, eres la luz que ilumina mi camino, y los ojos que me guian.
+                        </p>
+
+                        <div class="photo-frame-wrapper">
+                            <img src="papel viejo.svg" alt="Marco papel viejo" class="old-paper-bg" onerror="this.src='https://placehold.co/240x150/d2b48c/4a3728?text=Papel+Viejo'">
+                            <img src="https://media.discordapp.net/attachments/1563439178903982242/1566603850213757108/IMG_20261017_104015_362.jpg?ex=6ae92507&is=6ae7d387&hm=7e202a31567845c813b2b41daf8537004b7eb00214fff03f1d24165606880c28&=&format=webp&width=1385&height=778" 
+                                 alt="Nuestra foto" 
+                                 class="memory-photo"
+                                 onerror="this.src='https://placehold.co/175x105/a57d59/ffffff?text=Nuestra+Foto'">
+                        </div>
+
+                        <div class="cursor-pointer p-1 touch-manipulation transition-transform duration-150 active:scale-90 inline-block mt-1" id="stage2-heart-btn" role="button" aria-label="Ver siguiente texto">
+                            <svg class="w-9 h-9 text-[#A57D59] mx-auto filter drop-shadow-[0_4px_8px_rgba(165,125,89,0.3)]" viewBox="0 0 875.65 924.28" fill="currentColor">
+                                <path d="M483.24,184.85c33.49-94.2,98.19-162.47,169.46-180.13,9.3-2.3,72.56-16.91,132.78,20.55,66.98,41.66,80.78,117,86.13,146.18,11.78,64.26-4.25,115.3-21.53,168.11-8.85,27.05-26.96,76.13-96.89,186.38-84.31,132.92-115.88,152.84-157.9,241.2-30.29,63.69-45.65,120.15-53.83,157.14-136.27-187.5-229.56-281.36-290.68-332.56-9.74-8.16-49.47-41.04-96.89-91.36-56.23-59.67-92.55-98.2-118.42-157.14-20.07-45.7-55.07-125.42-21.53-208.31C41.98,65.6,108.51,17.43,171.83,7c112.14-18.46,244.93,76.43,294.27,241.2"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 3 -->
+                    <div id="text-stage-3" class="w-full flex flex-col items-center justify-between h-full hidden opacity-0 transition-opacity duration-700 py-4 px-2">
+                        <p class="text-xs sm:text-sm text-[#FFE4E1] font-metamorphous leading-relaxed text-center drop-shadow-md my-auto max-w-xs">
+                            24 meses, 730 días, 17.520 horas, 1.051.200 minutos y 63.072.000 segundos y contando, y cada segundo te amo mas, cada toque que te doy, cada caricia, y cada beso, es una carta de amor que te doy de mi para ti, mi mayor amor, mi dulce princesa, mi reina, todo mi ser es solo tuyo, espero podamos cuidarnos mutuamente, por que eres lo mas importante para mi
+                        </p>
+
+                        <!-- Botón de Vela SVG para avanzar a Minecraft -->
+                        <div id="candle-btn" class="cursor-pointer p-2 touch-manipulation transition-transform duration-150 active:scale-90 inline-block mt-2 mb-1" role="button" aria-label="Siguiente etapa Minecraft">
+                            <img src="image-Photoroom (2).svg" alt="Vela botón" class="w-16 h-24 sm:w-20 sm:h-28 object-contain candle-btn-icon mx-auto" onerror="this.src='https://placehold.co/80x110/ffffff/000000?text=🕯️'">
+                        </div>
+                    </div>
+
+                    <!-- Etapa 4: MINECRAFT -->
+                    <div id="text-stage-4" class="w-full flex flex-col items-center justify-between h-full hidden opacity-0 transition-opacity duration-700 py-2 px-1 relative">
+                        <h2 class="text-xs sm:text-sm text-[#73d853] font-pixel tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mb-1 uppercase text-center">
+                            NUESTRO MUNDO JUNTO A TI
+                        </h2>
+
+                        <p class="text-[9px] sm:text-[10px] text-[#e0e0e0] font-pixel leading-tight text-center my-auto max-w-xs drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]">
+                            Y si el amor que te tengo se pudiera medir en bloques, habríamos construido un refugio tan alto que tocaría las estrellas del cielo de nuestro propio mundo. Quién le iba a decir a mi corazón que encontraría en ti a mi compañera de aventuras definitiva. Eres la primera persona en este vasto universo a la que le he dedicado tantas horas de mi vida solo por el simple placer de estar a tu lado. Si miro atrás y hago cuentas, descubro con una sonrisa que ya llevamos 440 horas jugando juntos a Minecraft... 440 horas compartiendo cofres, esquivando peligros y creando nuestro propio hogar digital, y no cambiaría ni un solo segundo de este viaje a tu lado.
+                        </p>
+
+                        <!-- Foto de Minecraft con marco mc.svg sobrepuesto -->
+                        <div class="mc-photo-wrapper">
+                            <img src="https://media.discordapp.net/attachments/1563439178903982242/1566621347650601011/616957a3-0052-452c-93bd-cfbcf1c47da9.png?ex=6ae93553&is=6ae7e3d3&hm=7589ec6cc2732e1d1f13f3f34b931ce2b1db08e6a64e3c3d365902d35e61117b&=&format=webp&quality=lossless&width=1172&height=876" 
+                                 alt="Minecraft Foto" 
+                                 class="mc-photo-img"
+                                 onerror="this.src='https://placehold.co/240x140/4a7c2c/ffffff?text=Minecraft+Love'">
+                            <img src="marco mc.svg" alt="Marco Minecraft" class="mc-frame-svg" onerror="this.src='https://placehold.co/240x140/transparent/73d853?text=Frame'">
+                        </div>
+
+                        <!-- Botón Continue estilo Minecraft -->
+                        <div class="absolute bottom-1 right-2 z-30">
+                            <button id="mc-continue-btn" class="minecraft-continue-btn px-4 py-2 text-xs sm:text-sm rounded-none font-pixel cursor-pointer tracking-wider">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 5: CUEVA (Underworld) -->
+                    <div id="text-stage-5" class="w-full flex flex-col items-center justify-between h-full hidden opacity-0 transition-opacity duration-700 py-2 px-1 relative">
+                        <h2 class="text-xs sm:text-sm text-[#ffff55] font-pixel tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mb-1 uppercase text-center">
+                            ERES MI REFUGIO
+                        </h2>
+
+                        <!-- Contenedor de herramientas más grandes y espaciadas -->
+                        <div class="w-full flex flex-col justify-between my-auto space-y-3 text-left px-1">
+                            
+                            <!-- Herramienta 1: Antorcha (Derecha) -->
+                            <div class="flex items-center justify-between w-full bg-black/30 p-1.5 rounded border border-white/10">
+                                <p class="text-[8px] sm:text-[9px] text-[#ffff55] font-pixel leading-tight pr-2 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] flex-1">
+                                    En medio de la cueva más profunda y fría, cuando el mundo de sombra se llena, tú eres la antorcha que mi camino guía y la luz que espanta cualquier pena.
+                                </p>
+                                <img src="https://minecraft.wiki/images/Torch.gif?8e1d4" alt="Antorcha" class="w-12 h-12 sm:w-14 sm:h-14 object-contain flex-shrink-0 image-rendering-pixelated">
+                            </div>
+
+                            <!-- Herramienta 2: Pico de Diamante (Izquierda) -->
+                            <div class="flex items-center justify-between w-full bg-black/30 p-1.5 rounded border border-white/10">
+                                <img src="https://minecraft.wiki/images/Enchanted_Diamond_Pickaxe.gif?c7aaa" alt="Pico de Diamante" class="w-12 h-12 sm:w-14 sm:h-14 object-contain flex-shrink-0 image-rendering-pixelated mr-2">
+                                <p class="text-[8px] sm:text-[9px] text-[#ffff55] font-pixel leading-tight pl-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] flex-1">
+                                    Te cuido con la fuerza y el anhelo de quien guarda su tesoro más sagrado; eres mi pico de diamante en este suelo, un regalo único que la vida me ha dado.
+                                </p>
+                            </div>
+
+                            <!-- Herramienta 3: Lámpara de Redstone (Derecha) -->
+                            <div class="flex items-center justify-between w-full bg-black/30 p-1.5 rounded border border-white/10">
+                                <p class="text-[8px] sm:text-[9px] text-[#ffff55] font-pixel leading-tight pr-2 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] flex-1">
+                                    Un pulso de energía, un brillo constante, que enciende de calidez nuestro hogar; contigo los días se sienten vibrantes, y sé exactamente dónde quiero estar.
+                                </p>
+                                <img src="https://minecraft.wiki/images/thumb/Lit_Redstone_Lamp_JE3_BE2.png/150px-Lit_Redstone_Lamp_JE3_BE2.png?ec804" alt="Lámpara de Redstone" class="w-12 h-12 sm:w-14 sm:h-14 object-contain flex-shrink-0 image-rendering-pixelated">
+                            </div>
+
+                        </div>
+
+                        <!-- Botón Continue estilo Minecraft en la Cueva -->
+                        <div class="absolute bottom-1 right-2 z-30">
+                            <button id="cave-continue-btn" class="minecraft-continue-btn px-4 py-2 text-xs sm:text-sm rounded-none font-pixel cursor-pointer tracking-wider">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 6: NUESTROS GUARDIANES (Lobo, Golem y Zombi) -->
+                    <div id="text-stage-6" class="w-full flex flex-col items-center justify-between h-full hidden opacity-0 transition-opacity duration-700 py-1.5 px-1 relative">
+                        <h2 class="text-xs sm:text-sm text-[#ffff55] font-pixel tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mb-1 uppercase text-center">
+                            NUESTROS GUARDIANES
+                        </h2>
+
+                        <!-- Contenedor de las 3 criaturas con espacio holgado y equilibrado -->
+                        <div class="w-full flex flex-col justify-between my-auto space-y-2.5 text-left px-0.5">
+                            
+                            <!-- 1. Lobo Minecraft (Texto Izquierda, Imagen Derecha, Color Verde Fosforescente) -->
+                            <div class="flex items-center justify-between w-full bg-black/35 p-1.5 rounded border border-white/10">
+                                <p class="text-[7.5px] sm:text-[8.5px] text-[#00FF66] font-pixel leading-tight pr-2 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] flex-1">
+                                    Aunque el mapa sea inmeso y solitario, caminar a tu lado es mi paz infinita; un amor fiel que cruza cualquier escenario, tan leal y tierno como un lobo de compañía.
+                                </p>
+                                <img src="https://minecraft.wiki/images/thumb/Wolf_shaking.gif/300px-Wolf_shaking.gif?ecab8" alt="Lobo" class="w-12 h-12 sm:w-14 sm:h-14 object-contain flex-shrink-0 image-rendering-pixelated">
+                            </div>
+
+                            <!-- 2. Golem de Hierro (Imagen Izquierda, Texto Derecha, Color Verde Celeste Fosforescente) -->
+                            <div class="flex items-center justify-between w-full bg-black/35 p-1.5 rounded border border-white/10">
+                                <img src="https://snowflakemc.wordpress.com/wp-content/uploads/2014/03/iron_golem_by_barakaldo-d4s5com.gif" alt="Golem de Hierro" class="w-12 h-12 sm:w-14 sm:h-14 object-contain flex-shrink-0 image-rendering-pixelated mr-2">
+                                <p class="text-[7.5px] sm:text-[8.5px] text-[#55FFFF] font-pixel leading-tight pl-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] flex-1">
+                                    Gigante de metal, protector silencioso, que cuida la aldea con fuerza y valor; así eres tú para mí: mi refugio hermoso, quien me defiende del mundo con su amor.
+                                </p>
+                            </div>
+
+                            <!-- 3. Zombi (Texto Izquierda, Imagen Derecha, Color Verde Limón Fosforescente) -->
+                            <div class="flex items-center justify-between w-full bg-black/35 p-1.5 rounded border border-white/10">
+                                <p class="text-[7.5px] sm:text-[8.5px] text-[#73FF33] font-pixel leading-tight pr-2 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] flex-1">
+                                    Aunque la noche se llene de peligros y ruidos, y los zombis acechen buscando escalar, si voy a tu lado y estamos unidos, no hay horda en el mundo que pueda asustar.
+                                </p>
+                                <img src="https://minecraft.wiki/images/MCD_Zombie_Idle.gif?85c81" alt="Zombi" class="w-12 h-12 sm:w-14 sm:h-14 object-contain flex-shrink-0 image-rendering-pixelated">
+                            </div>
+
+                        </div>
+
+                        <!-- Botón Continue para pasar a la etapa de fotos previas -->
+                        <div class="absolute bottom-1 right-2 z-30">
+                            <button id="photos-trigger-btn" class="minecraft-continue-btn px-4 py-2 text-xs sm:text-sm rounded-none font-pixel cursor-pointer tracking-wider">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 6.5: FOTOS PREVIAS AL NETHER (Tus 2 imágenes con diseño dinámico) -->
+                    <div id="text-stage-photos" class="w-full flex flex-col items-center justify-between h-full hidden opacity-0 transition-opacity duration-700 py-1.5 px-1 relative">
+                        <h2 class="text-xs sm:text-sm text-[#ffaa00] font-pixel tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mb-1 uppercase text-center">
+                            📸 LISTOS ANTES DEL PORTAL 🧭
+                        </h2>
+
+                        <div class="w-full flex flex-col items-center justify-center my-auto space-y-3 px-1">
+                            <!-- Contenedor dinámico de las 2 fotos alternadas -->
+                            <div class="dynamic-photo-frame">
+                                <img id="dynamic-couple-img" src="https://media.discordapp.net/attachments/1563439178903982242/1566652401287438486/Captura_de_pantalla_2025-08-30_000941.png?ex=6ae9523f&is=6ae800bf&hm=150d83a82c3cf0ac0ae6468e014c533f8531df7cf1cd0064652ac0ebc4af0698&=&format=webp&quality=lossless&width=1525&height=778" alt="Nuestra foto previa al Nether" class="dynamic-photo-img">
+                            </div>
+
+                            <p class="text-[8.5px] sm:text-[9.5px] text-[#ffdf80] font-pixel leading-tight text-center drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] max-w-xs">
+                                Preparando el equipo y guardando las armaduras... Mirarte a los ojos antes de cruzar al inframundo me recuerda que, sin importar el peligro, contigo cualquier aventura se siente como casa. Te amo mi vida. ❤️
+                            </p>
+                        </div>
+
+                        <!-- Botón Continue para ir al Nether con la pantalla de carga -->
+                        <div class="absolute bottom-1 right-2 z-30">
+                            <button id="nether-trigger-btn" class="nether-continue-btn px-4 py-2 text-xs sm:text-sm rounded-none font-pixel cursor-pointer tracking-wider">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 7: NETHER (Ghast, Hoglin y Wither Skeleton) -->
+                    <div id="text-stage-7" class="w-full flex flex-col items-center justify-between h-full hidden opacity-0 transition-opacity duration-700 py-1.5 px-1 relative">
+                        <h2 class="text-xs sm:text-sm text-[#ff5555] font-pixel tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mb-1 uppercase text-center">
+                            🔥 NUESTRO FUEGO ETERNO 🔥
+                        </h2>
+
+                        <!-- Contenedor de las 3 criaturas del Nether con espacio equilibrado -->
+                        <div class="w-full flex flex-col justify-between my-auto space-y-2.5 text-left px-0.5">
+                            
+                            <!-- 1. Ghast (Texto Izquierda, Imagen Derecha, Color Blanco Fosforescente) -->
+                            <div class="flex items-center justify-between w-full bg-black/45 p-1.5 rounded border border-white/15">
+                                <p class="text-[7.5px] sm:text-[8.5px] text-[#FFFFFF] font-pixel leading-tight pr-2 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] flex-1">
+                                    Lágrimas blancas flotando en la tormenta, disparando fuego que intenta quemar; pero tu risa es la paz que alimenta y aleja el estruendo que quiere asustar.
+                                </p>
+                                <img src="https://minecraft.wiki/images/thumb/Happy_Ghast_JE1_BE1.gif/240px-Happy_Ghast_JE1_BE1.gif?ae2ce" alt="Ghast" class="w-12 h-12 sm:w-14 sm:h-14 object-contain flex-shrink-0 image-rendering-pixelated">
+                            </div>
+
+                            <!-- 2. Hoglin (Imagen Izquierda, Texto Derecha, Color Amarillo Verdoso Fosforescente) -->
+                            <div class="flex items-center justify-between w-full bg-black/45 p-1.5 rounded border border-white/15">
+                                <img src="https://minecraft.wiki/images/thumb/Hoglin_being_Zombified.gif/230px-Hoglin_being_Zombified.gif?ce42b" alt="Hoglin" class="w-12 h-12 sm:w-14 sm:h-14 object-contain flex-shrink-0 image-rendering-pixelated mr-2">
+                                <p class="text-[7.5px] sm:text-[8.5px] text-[#b5ff33] font-pixel leading-tight pl-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] flex-1">
+                                    Bestias salvajes que corren sin freno, en tierras oscuras de ceniza y calor; pero frente a ti se desarma el trueno, y todo lo fiero se vuelve valor.
+                                </p>
+                            </div>
+
+                            <!-- 3. Wither Skeleton (Texto Izquierda, Imagen Derecha, Color Morado Fosforescente) -->
+                            <div class="flex items-center justify-between w-full bg-black/45 p-1.5 rounded border border-white/15">
+                                <p class="text-[7.5px] sm:text-[8.5px] text-[#d480ff] font-pixel leading-tight pr-2 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] flex-1">
+                                    Entre fortalezas de piedra y ceniza, donde las sombras acechan sin piedad; tu mano en la mía es la brisa que vence a la muerte con complicidad.
+                                </p>
+                                <img src="https://minecraft.wiki/images/MCD_Wither_Skeleton_Idle.gif?b7685" alt="Wither Skeleton" class="w-12 h-12 sm:w-14 sm:h-14 object-contain flex-shrink-0 image-rendering-pixelated">
+                            </div>
+
+                        </div>
+
+                        <!-- Botón Continue de la etapa Nether (Púrpura al hacer click, abre el End con pantalla de carga) -->
+                        <div class="absolute bottom-1 right-2 z-30">
+                            <button id="nether-final-btn" class="nether-continue-btn px-4 py-2 text-xs sm:text-sm rounded-none font-pixel cursor-pointer tracking-wider">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 8: EL END (Portal del End, Enderman y Elytras) -->
+                    <div id="text-stage-8" class="w-full flex flex-col items-center justify-between h-full hidden opacity-0 transition-opacity duration-700 py-1.5 px-1 relative">
+                        <h2 class="text-xs sm:text-sm text-[#d8b4fe] font-pixel tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mb-1 uppercase text-center">
+                            🌌 NUESTRO DESTINO EN EL END 💜
+                        </h2>
+
+                        <!-- Contenedor de las 3 maravillas del End con espacio equilibrado -->
+                        <div class="w-full flex flex-col justify-between my-auto space-y-2.5 text-left px-0.5">
+                            
+                            <!-- 1. Portal del End (Texto Izquierda, Imagen Derecha, Color Azul Celeste Verdoso Fosforescente) -->
+                            <div class="flex items-center justify-between w-full bg-black/50 p-1.5 rounded border border-purple-500/30">
+                                <p class="text-[7.5px] sm:text-[8.5px] text-[#2dd4bf] font-pixel leading-tight pr-2 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] flex-1">
+                                    Juntando los ojos de un gris brillante en el marco oscuro que abre el camino; abrir este portal fue el paso constante que unió para siempre nuestro destino.
+                                </p>
+                                <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/22/End_Gateway.gif/revision/latest?cb=20201207133305" alt="Portal del End" class="w-12 h-12 sm:w-14 sm:h-14 object-contain flex-shrink-0 image-rendering-pixelated">
+                            </div>
+
+                            <!-- 2. Enderman (Imagen Izquierda, Texto Derecha, Color Púrpura Fosforescente) -->
+                            <div class="flex items-center justify-between w-full bg-black/50 p-1.5 rounded border border-purple-500/30">
+                                <img src="https://minecraft.wiki/images/thumb/MCD_Enderman_Idle.gif/150px-MCD_Enderman_Idle.gif?4d9cf" alt="Enderman" class="w-12 h-12 sm:w-14 sm:h-14 object-contain flex-shrink-0 image-rendering-pixelated mr-2">
+                                <p class="text-[7.5px] sm:text-[8.5px] text-[#c084fc] font-pixel leading-tight pl-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] flex-1">
+                                    Cruzando distancias y cielos oscuros, saltando a mundos que nadie alcanzó; contigo los límites ya no son duros, porque mi alma a tu lado por fin se encontró.
+                                </p>
+                            </div>
+
+                            <!-- 3. Elytras (Texto Izquierda, Imagen Derecha, Color Morado Claro Fosforescente) -->
+                            <div class="flex items-center justify-between w-full bg-black/50 p-1.5 rounded border border-purple-500/30">
+                                <p class="text-[7.5px] sm:text-[8.5px] text-[#e879f9] font-pixel leading-tight pr-2 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] flex-1">
+                                    Con las alas del End abiertas al viento, planeando sobre el gran abismo azul; no hay caída que rompa lo que siento, si el cielo se vuelve de nuevo luz.
+                                </p>
+                                <img src="https://minecraft.wiki/images/thumb/Enchanted_Elytra_%28item%29.gif/120px-Enchanted_Elytra_%28item%29.gif?fb130" alt="Elytras" class="w-12 h-12 sm:w-14 sm:h-14 object-contain flex-shrink-0 image-rendering-pixelated">
+                            </div>
+
+                        </div>
+
+                        <!-- Botón Continue de la etapa End (abre la secuencia final de marcos Liquid Glass con temática Minecraft) -->
+                        <div class="absolute bottom-1 right-2 z-30">
+                            <button id="end-to-final-paragraphs-btn" class="end-continue-btn px-4 py-2 text-xs sm:text-sm rounded-none font-pixel cursor-pointer tracking-wider">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 9-A: REFLEXIÓN FINAL PARRRAFO 1 -->
+                    <div id="text-stage-p1" class="w-full flex flex-col items-center justify-between h-full hidden opacity-0 transition-opacity duration-700 py-4 px-2">
+                        <p class="text-xs sm:text-sm text-[#d4ffaa] font-metamorphous leading-relaxed text-center drop-shadow-md my-auto max-w-xs">
+                            Y después de recorrer tantos mapas, dimensiones y caminos juntos, a veces pienso sobre todo lo que vivimos. Siento que bloques, comandos y palabras del mundo no son suficientes para expresar lo mucho que significas para mí.
+                        </p>
+
+                        <!-- Botón de Corazón para avanzar al siguiente párrafo -->
+                        <div class="cursor-pointer p-1 touch-manipulation transition-transform duration-150 active:scale-90 inline-block mt-2 mb-1" id="p1-heart-btn" role="button" aria-label="Siguiente párrafo">
+                            <svg class="w-9 h-9 text-[#73d853] mx-auto filter drop-shadow-[0_4px_8px_rgba(115,216,83,0.4)]" viewBox="0 0 875.65 924.28" fill="currentColor">
+                                <path d="M483.24,184.85c33.49-94.2,98.19-162.47,169.46-180.13,9.3-2.3,72.56-16.91,132.78,20.55,66.98,41.66,80.78,117,86.13,146.18,11.78,64.26-4.25,115.3-21.53,168.11-8.85,27.05-26.96,76.13-96.89,186.38-84.31,132.92-115.88,152.84-157.9,241.2-30.29,63.69-45.65,120.15-53.83,157.14-136.27-187.5-229.56-281.36-290.68-332.56-9.74-8.16-49.47-41.04-96.89-91.36-56.23-59.67-92.55-98.2-118.42-157.14-20.07-45.7-55.07-125.42-21.53-208.31C41.98,65.6,108.51,17.43,171.83,7c112.14-18.46,244.93,76.43,294.27,241.2"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 9-B: REFLEXIÓN FINAL PARRRAFO 2 -->
+                    <div id="text-stage-p2" class="w-full flex flex-col items-center justify-between h-full hidden opacity-0 transition-opacity duration-700 py-4 px-2">
+                        <p class="text-xs sm:text-sm text-[#d4ffaa] font-metamorphous leading-relaxed text-center drop-shadow-md my-auto max-w-xs">
+                            Hay tantas cosas que quiero decir, sobre tiempo que vivimos juntos. Pero la verdad es que palabras no caben para describir amor que tengo. Cada segundo que paso con mi amor es importante; cada risa, cada llamada y cada momento compartido lo guardo bien dentro del corazón.
+                        </p>
+
+                        <!-- Botón de Corazón para avanzar al tercer párrafo -->
+                        <div class="cursor-pointer p-1 touch-manipulation transition-transform duration-150 active:scale-90 inline-block mt-2 mb-1" id="p2-heart-btn" role="button" aria-label="Siguiente párrafo">
+                            <svg class="w-9 h-9 text-[#73d853] mx-auto filter drop-shadow-[0_4px_8px_rgba(115,216,83,0.4)]" viewBox="0 0 875.65 924.28" fill="currentColor">
+                                <path d="M483.24,184.85c33.49-94.2,98.19-162.47,169.46-180.13,9.3-2.3,72.56-16.91,132.78,20.55,66.98,41.66,80.78,117,86.13,146.18,11.78,64.26-4.25,115.3-21.53,168.11-8.85,27.05-26.96,76.13-96.89,186.38-84.31,132.92-115.88,152.84-157.9,241.2-30.29,63.69-45.65,120.15-53.83,157.14-136.27-187.5-229.56-281.36-290.68-332.56-9.74-8.16-49.47-41.04-96.89-91.36-56.23-59.67-92.55-98.2-118.42-157.14-20.07-45.7-55.07-125.42-21.53-208.31C41.98,65.6,108.51,17.43,171.83,7c112.14-18.46,244.93,76.43,294.27,241.2"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 9-C: REFLEXIÓN FINAL PARRRAFO 3 -->
+                    <div id="text-stage-p3" class="w-full flex flex-col items-center justify-between h-full hidden opacity-0 transition-opacity duration-700 py-4 px-2">
+                        <p class="text-xs sm:text-sm text-[#d4ffaa] font-metamorphous leading-relaxed text-center drop-shadow-md my-auto max-w-xs">
+                            Incluso cuando dejamos Minecraft y vamos a dar una vuelta por Roblox, donde a veces no hay grandes aventuras épicas que contar, lo único que importa es simple compañía. Da igual juego, mundo, servidor en los que estemos: lo único que sé es que cualquier lugar se vuelve favorito si es a lado.
+                        </p>
+
+                        <!-- Botón de Corazón para llegar al mensaje final de aniversario -->
+                        <div class="cursor-pointer p-1 touch-manipulation transition-transform duration-150 active:scale-90 inline-block mt-2 mb-1" id="p3-heart-btn" role="button" aria-label="Mensaje final de aniversario">
+                            <svg class="w-9 h-9 text-[#73d853] mx-auto filter drop-shadow-[0_4px_8px_rgba(115,216,83,0.4)]" viewBox="0 0 875.65 924.28" fill="currentColor">
+                                <path d="M483.24,184.85c33.49-94.2,98.19-162.47,169.46-180.13,9.3-2.3,72.56-16.91,132.78,20.55,66.98,41.66,80.78,117,86.13,146.18,11.78,64.26-4.25,115.3-21.53,168.11-8.85,27.05-26.96,76.13-96.89,186.38-84.31,132.92-115.88,152.84-157.9,241.2-30.29,63.69-45.65,120.15-53.83,157.14-136.27-187.5-229.56-281.36-290.68-332.56-9.74-8.16-49.47-41.04-96.89-91.36-56.23-59.67-92.55-98.2-118.42-157.14-20.07-45.7-55.07-125.42-21.53-208.31C41.98,65.6,108.51,17.43,171.83,7c112.14-18.46,244.93,76.43,294.27,241.2"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 10: MENSAJE FINAL DE ANIVERSARIO -->
+                    <div id="text-stage-anniversary" class="w-full flex flex-col items-center justify-between h-full hidden opacity-0 transition-opacity duration-700 py-3 px-2">
+                        <h2 class="text-3xl sm:text-4xl text-[#73d853] font-jacquard leading-tight drop-shadow-sm mb-2">
+                            ¡Felices 2 Años, Mi Amor!
+                        </h2>
+
+                        <p class="text-xs sm:text-sm text-[#e2e8f0] font-metamorphous leading-relaxed text-center drop-shadow-md my-auto max-w-xs">
+                            Gracias por ser mi compañera incondicional en cada servidor, en cada juego y en esta hermosa realidad que compartimos. Estos dos años han sido la mejor aventura de mi vida entera. Que sean muchos aniversarios más construyendo nuestro amor bloque a bloque, corazón a corazón. Te amo con toda el alma. 💖✨
+                        </p>
+
+                        <div class="text-2xl text-[#73d853] drop-shadow-md mt-1">
+                            🌿🎮💕
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let progress = 0;
+            let taps = 0;
+
+            const heartBtn = document.getElementById('heart-btn');
+            const heartSvg = document.getElementById('heart-svg');
+            const progressBarFill = document.getElementById('progress-bar-fill');
+            const progressText = document.getElementById('progress-text');
+            const encouragingText = document.getElementById('encouraging-text');
+            const initialScreen = document.getElementById('initial-screen');
+            const finalScreen = document.getElementById('final-screen');
+            const mainCardFrame = document.getElementById('main-card-frame');
+            const textContainer = document.getElementById('content-container');
+            const finalHeartBtn = document.getElementById('final-heart-btn');
+            const stage2HeartBtn = document.getElementById('stage2-heart-btn');
+            const candleBtn = document.getElementById('candle-btn');
+            const mcContinueBtn = document.getElementById('mc-continue-btn');
+            const caveContinueBtn = document.getElementById('cave-continue-btn');
+            const photosTriggerBtn = document.getElementById('photos-trigger-btn');
+            const netherTriggerBtn = document.getElementById('nether-trigger-btn');
+            const netherFinalBtn = document.getElementById('nether-final-btn');
+            const endToFinalParagraphsBtn = document.getElementById('end-to-final-paragraphs-btn');
+            
+            const p1HeartBtn = document.getElementById('p1-heart-btn');
+            const p2HeartBtn = document.getElementById('p2-heart-btn');
+            const p3HeartBtn = document.getElementById('p3-heart-btn');
+            
+            const textStage1 = document.getElementById('text-stage-1');
+            const textStage2 = document.getElementById('text-stage-2');
+            const textStage3 = document.getElementById('text-stage-3');
+            const textStage4 = document.getElementById('text-stage-4');
+            const textStage5 = document.getElementById('text-stage-5');
+            const textStage6 = document.getElementById('text-stage-6');
+            const textStagePhotos = document.getElementById('text-stage-photos');
+            const textStage7 = document.getElementById('text-stage-7');
+            const textStage8 = document.getElementById('text-stage-8');
+            const textStageP1 = document.getElementById('text-stage-p1');
+            const textStageP2 = document.getElementById('text-stage-p2');
+            const textStageP3 = document.getElementById('text-stage-p3');
+            const textStageAnniversary = document.getElementById('text-stage-anniversary');
+            
+            const cornerDecor = document.getElementById('corner-decor');
+            const medievalOverlay = document.getElementById('medieval-frame-overlay');
+            const slimeCascade = document.getElementById('slime-cascade');
+            const caveCascade = document.getElementById('cave-cascade');
+            const topGreenBanner = document.getElementById('top-green-banner');
+            const topCaveBanner = document.getElementById('top-cave-banner');
+            const loadingScreen = document.getElementById('loading-screen');
+            const minecraftAudio = document.getElementById('minecraft-audio');
+            const minecraftBgMusic = document.getElementById('minecraft-bg-music');
+            const dynamicCoupleImg = document.getElementById('dynamic-couple-img');
+
+            // Configurar volumen de la canción de fondo al 67%
+            minecraftBgMusic.volume = 0.67;
+
+            // Rotación dinámica de tus 2 imágenes cada 3.5 segundos
+            const coupleImages = [
+                "https://media.discordapp.net/attachments/1563439178903982242/1566652401287438486/Captura_de_pantalla_2025-08-30_000941.png?ex=6ae9523f&is=6ae800bf&hm=150d83a82c3cf0ac0ae6468e014c533f8531df7cf1cd0064652ac0ebc4af0698&=&format=webp&quality=lossless&width=1525&height=778",
+                "https://media.discordapp.net/attachments/1563439178903982242/1566652401660854302/Captura_de_pantalla_2025-08-30_000813.png?ex=6ae9523f&is=6ae800bf&hm=17432d15c07ce2d8ed20c0afca08daab425a1f9915d2693c394dcec182b767bb&=&format=webp&quality=lossless&width=1562&height=778"
+            ];
+            let currentImgIndex = 0;
+            setInterval(() => {
+                if (textStagePhotos && !textStagePhotos.classList.contains('hidden')) {
+                    currentImgIndex = (currentImgIndex + 1) % coupleImages.length;
+                    dynamicCoupleImg.style.opacity = '0';
+                    setTimeout(() => {
+                        dynamicCoupleImg.src = coupleImages[currentImgIndex];
+                        dynamicCoupleImg.style.opacity = '1';
+                    }, 300);
+                }
+            }, 3500);
+            dynamicCoupleImg.style.transition = 'opacity 0.3s ease-in-out';
+
+            const phrases = [
+                "¡Cada latido cuenta! ✨",
+                "¡Siente todo nuestro amor! 💖",
+                "¡Un paso más cerca! 🥰",
+                "¡Casi llegamos al 100%! 💕",
+                "¡Completado con todo mi corazón! ❤️"
+            ];
+
+            function createAmbientHearts() {
+                const container = document.getElementById('ambient-hearts-container');
+                container.innerHTML = '';
+                const heartCount = 20;
+
+                for (let i = 0; i < heartCount; i++) {
+                    const heart = document.createElement('div');
+                    heart.className = 'ambient-heart';
+                    
+                    const baseSize = Math.floor(Math.random() * 50) + 20; 
+                    const leftPos = Math.random() * 92 + 4;
+                    const opacity = (Math.random() * 0.3 + 0.15).toFixed(2);
+                    const duration = (Math.random() * 8 + 5).toFixed(1);
+                    const delay = (Math.random() * -10).toFixed(1);
+                    const scaleVar = (Math.random() * 0.5 + 0.8).toFixed(2);
+
+                    heart.style.left = `${leftPos}%`;
+                    heart.style.width = `${baseSize}px`;
+                    heart.style.height = `${baseSize}px`;
+                    heart.style.opacity = opacity;
+                    heart.style.animationDuration = `${duration}s`;
+                    heart.style.animationDelay = `${delay}s`;
+                    heart.style.setProperty('--heart-scale', scaleVar);
+
+                    heart.innerHTML = `
+                        <svg viewBox="0 0 875.65 924.28" fill="currentColor" class="w-full h-full">
+                            <path d="M483.24,184.85c33.49-94.2,98.19-162.47,169.46-180.13,9.3-2.3,72.56-16.91,132.78,20.55,66.98,41.66,80.78,117,86.13,146.18,11.78,64.26-4.25,115.3-21.53,168.11-8.85,27.05-26.96,76.13-96.89,186.38-84.31,132.92-115.88,152.84-157.9,241.2-30.29,63.69-45.65,120.15-53.83,157.14-136.27-187.5-229.56-281.36-290.68-332.56-9.74-8.16-49.47-41.04-96.89-91.36-56.23-59.67-92.55-98.2-118.42-157.14-20.07-45.7-55.07-125.42-21.53-208.31C41.98,65.6,108.51,17.43,171.83,7c112.14-18.46,244.93,76.43,294.27,241.2"/>
+                        </svg>
+                    `;
+
+                    container.appendChild(heart);
+                }
+            }
+
+            function triggerHeartParticles(e) {
+                const rect = heartBtn.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                for (let i = 0; i < 10; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'fixed text-[#A57D59] pointer-events-none z-50 transition-all duration-700 ease-out';
+                    particle.style.left = `${centerX}px`;
+                    particle.style.top = `${centerY}px`;
+                    
+                    const particleSize = Math.floor(Math.random() * 14) + 12;
+                    particle.style.width = `${particleSize}px`;
+                    particle.style.height = `${particleSize}px`;
+
+                    particle.innerHTML = `
+                        <svg viewBox="0 0 875.65 924.28" fill="currentColor" class="w-full h-full">
+                            <path d="M483.24,184.85c33.49-94.2,98.19-162.47,169.46-180.13,9.3-2.3,72.56-16.91,132.78,20.55,66.98,41.66,80.78,117,86.13,146.18,11.78,64.26-4.25,115.3-21.53,168.11-8.85,27.05-26.96,76.13-96.89,186.38-84.31,132.92-115.88,152.84-157.9,241.2-30.29,63.69-45.65,120.15-53.83,157.14-136.27-187.5-229.56-281.36-290.68-332.56-9.74-8.16-49.47-41.04-96.89-91.36-56.23-59.67-92.55-98.2-118.42-157.14-20.07-45.7-55.07-125.42-21.53-208.31C41.98,65.6,108.51,17.43,171.83,7c112.14-18.46,244.93,76.43,294.27,241.2"/>
+                        </svg>
+                    `;
+                    document.body.appendChild(particle);
+
+                    const angle = (i / 10) * Math.PI * 2 + (Math.random() * 0.4 - 0.2);
+                    const distance = 55 + Math.random() * 45;
+                    const x = Math.cos(angle) * distance;
+                    const y = Math.sin(angle) * distance;
+
+                    requestAnimationFrame(() => {
+                        particle.style.transform = `translate(${x}px, ${y}px) scale(0.2)`;
+                        particle.style.opacity = '0';
+                    });
+
+                    setTimeout(() => particle.remove(), 700);
+                }
+            }
+
+            function handleTap(e) {
+                if (progress >= 100) return;
+
+                heartSvg.classList.remove('heart-beat');
+                void heartSvg.offsetWidth;
+                heartSvg.classList.add('heart-beat');
+
+                triggerHeartParticles(e);
+
+                taps++;
+                progress = Math.min(taps * 20, 100);
+
+                progressBarFill.style.width = `${progress}%`;
+                progressText.textContent = `${progress}%`;
+                encouragingText.textContent = phrases[taps - 1] || phrases[phrases.length - 1];
+
+                if (progress >= 100) {
+                    setTimeout(showFinalScreen, 650);
+                }
+            }
+
+            function showFinalScreen() {
+                document.body.classList.add('show-final');
+                initialScreen.classList.add('fade-out');
+
+                setTimeout(() => {
+                    initialScreen.classList.add('hidden');
+                    finalScreen.classList.remove('opacity-0', 'pointer-events-none');
+                    finalScreen.classList.add('fade-in');
+                    textContainer.classList.add('soft-bounce-enter');
+                }, 750);
+            }
+
+            heartBtn.addEventListener('click', handleTap);
+
+            // De Etapa 1 a Etapa 2
+            finalHeartBtn.addEventListener('click', () => {
+                textStage1.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                setTimeout(() => {
+                    textStage1.classList.add('hidden');
+                    textStage2.classList.remove('hidden');
+                    setTimeout(() => { textStage2.classList.remove('opacity-0'); }, 50);
+                }, 500);
+            });
+
+            // De Etapa 2 a Etapa 3
+            stage2HeartBtn.addEventListener('click', () => {
+                document.body.classList.add('theme-red');
+                if (cornerDecor) cornerDecor.classList.add('opacity-0');
+
+                textStage2.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                setTimeout(() => {
+                    textStage2.classList.add('hidden');
+                    textStage3.classList.remove('hidden');
+                    
+                    if (medievalOverlay) {
+                        medievalOverlay.classList.remove('hidden');
+                        setTimeout(() => medievalOverlay.classList.remove('opacity-0'), 50);
+                    }
+
+                    setTimeout(() => { textStage3.classList.remove('opacity-0'); }, 50);
+                }, 500);
+            });
+
+            // Transición estilo Minecraft (Slime Cascade) -> ¡Aquí empieza a sonar la música de fondo!
+            candleBtn.addEventListener('click', () => {
+                // Reproducir la canción de fondo configurada al 67% de volumen
+                minecraftBgMusic.play().catch(e => console.log("Background music autoplay restricted:", e));
+
+                topGreenBanner.style.display = 'block';
+                setTimeout(() => { topGreenBanner.style.opacity = '1'; }, 10);
+                slimeCascade.querySelectorAll('.slime-column').forEach(col => col.style.transform = 'translateY(0%)');
+
+                setTimeout(() => {
+                    document.body.classList.remove('theme-red', 'show-final');
+                    document.body.classList.add('theme-minecraft');
+                    
+                    if (medievalOverlay) medievalOverlay.classList.add('hidden');
+                    mainCardFrame.classList.remove('liquid-glass-card');
+                    mainCardFrame.classList.add('pixel-card');
+
+                    textStage3.classList.add('hidden');
+                    textStage4.classList.remove('hidden');
+                    textStage4.classList.remove('opacity-0');
+
+                    slimeCascade.querySelectorAll('.slime-column').forEach(col => col.style.transform = 'translateY(100%)');
+                    setTimeout(() => {
+                        slimeCascade.querySelectorAll('.slime-column').forEach(col => col.style.transform = 'translateY(-100%)');
+                    }, 800);
+                }, 850);
+            });
+
+            // Transición estilo Cueva (Gray Cascade)
+            mcContinueBtn.addEventListener('click', () => {
+                topGreenBanner.style.opacity = '0';
+                setTimeout(() => { topGreenBanner.style.display = 'none'; }, 500);
+
+                topCaveBanner.style.display = 'block';
+                setTimeout(() => { topCaveBanner.style.opacity = '1'; }, 10);
+                caveCascade.querySelectorAll('.cave-column').forEach(col => col.style.transform = 'translateY(0%)');
+
+                setTimeout(() => {
+                    document.body.classList.remove('theme-minecraft');
+                    document.body.classList.add('theme-cave');
+                    
+                    mainCardFrame.classList.remove('pixel-card');
+                    mainCardFrame.classList.add('cave-card');
+
+                    textStage4.classList.add('hidden');
+                    textStage5.classList.remove('hidden');
+                    textStage5.classList.remove('opacity-0');
+
+                    caveCascade.querySelectorAll('.cave-column').forEach(col => col.style.transform = 'translateY(100%)');
+                    setTimeout(() => {
+                        caveCascade.querySelectorAll('.cave-column').forEach(col => col.style.transform = 'translateY(-100%)');
+                    }, 800);
+                }, 850);
+            });
+
+            // Transición de la Cueva hacia Guardianes con glitch
+            if (caveContinueBtn) {
+                caveContinueBtn.addEventListener('click', () => {
+                    textStage5.classList.add('pixel-glitch-out');
+
+                    setTimeout(() => {
+                        textStage5.classList.add('hidden');
+                        textStage5.classList.remove('pixel-glitch-out');
+
+                        textStage6.classList.remove('hidden');
+                        void textStage6.offsetWidth;
+                        textStage6.classList.remove('opacity-0');
+                        textStage6.classList.add('soft-bounce-enter');
+                    }, 600);
+                });
+            }
+
+            // De Guardianes a la Etapa de Fotos Previas al Nether
+            if (photosTriggerBtn) {
+                photosTriggerBtn.addEventListener('click', () => {
+                    textStage6.classList.add('pixel-glitch-out');
+
+                    setTimeout(() => {
+                        textStage6.classList.add('hidden');
+                        textStage6.classList.remove('pixel-glitch-out');
+
+                        textStagePhotos.classList.remove('hidden');
+                        void textStagePhotos.offsetWidth;
+                        textStagePhotos.classList.remove('opacity-0');
+                        textStagePhotos.classList.add('soft-bounce-enter');
+                    }, 600);
+                });
+            }
+
+            // Transición 1 al NETHER (con pantalla "Generando Mundo" y 5s de carga)
+            if (netherTriggerBtn) {
+                netherTriggerBtn.addEventListener('click', () => {
+                    topCaveBanner.style.opacity = '0';
+                    setTimeout(() => { topCaveBanner.style.display = 'none'; }, 500);
+
+                    minecraftAudio.currentTime = 0;
+                    minecraftAudio.play().catch(e => console.log("Audio play blocked:", e));
+
+                    loadingScreen.style.backgroundImage = "url('https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/f2/Dirt_background_BE1.png/revision/latest?cb=20210820093527')";
+                    loadingScreen.style.display = 'flex';
+                    setTimeout(() => { loadingScreen.style.opacity = '1'; }, 10);
+
+                    setTimeout(() => {
+                        document.body.classList.remove('theme-cave');
+                        document.body.classList.add('theme-nether');
+
+                        mainCardFrame.classList.remove('cave-card');
+                        mainCardFrame.classList.add('nether-card');
+
+                        textStagePhotos.classList.add('hidden');
+                        textStage7.classList.remove('hidden');
+                        void textStage7.offsetWidth;
+                        textStage7.classList.remove('opacity-0');
+                        textStage7.classList.add('fade-in');
+
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => { loadingScreen.style.display = 'none'; }, 600);
+                    }, 5000);
+                });
+            }
+
+            // Transición 2 al END (con pantalla "Generando Mundo" con fondo de Steam y 5s de carga)
+            if (netherFinalBtn) {
+                netherFinalBtn.addEventListener('click', () => {
+                    netherFinalBtn.classList.add('clicked');
+                    netherFinalBtn.textContent = "¡Listo!";
+
+                    minecraftAudio.currentTime = 0;
+                    minecraftAudio.play().catch(e => console.log("Audio play blocked:", e));
+
+                    loadingScreen.style.backgroundImage = "url('https://images.steamusercontent.com/ugc/1663484178291957989/4F94ED0893D7D83B4954388A4F7819E0975E498E/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true')";
+                    loadingScreen.style.display = 'flex';
+                    setTimeout(() => { loadingScreen.style.opacity = '1'; }, 10);
+
+                    setTimeout(() => {
+                        document.body.classList.remove('theme-nether');
+                        document.body.classList.add('theme-end');
+
+                        mainCardFrame.classList.remove('nether-card');
+                        mainCardFrame.classList.add('end-card');
+
+                        textStage7.classList.add('hidden');
+                        textStage8.classList.remove('hidden');
+                        void textStage8.offsetWidth;
+                        textStage8.classList.remove('opacity-0');
+                        textStage8.classList.add('fade-in');
+
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => { loadingScreen.style.display = 'none'; }, 600);
+                    }, 5000);
+                });
+            }
+
+            // Transición del End hacia los párrafos finales con formato Liquid Glass Minecraft
+            if (endToFinalParagraphsBtn) {
+                endToFinalParagraphsBtn.addEventListener('click', () => {
+                    document.body.classList.remove('theme-end');
+                    document.body.classList.add('theme-mc-glass');
+
+                    mainCardFrame.classList.remove('end-card');
+                    mainCardFrame.classList.add('liquid-glass-card');
+
+                    textStage8.classList.add('hidden');
+                    textStageP1.classList.remove('hidden');
+                    void textStageP1.offsetWidth;
+                    textStageP1.classList.remove('opacity-0');
+                    textStageP1.classList.add('fade-in');
+                });
+            }
+
+            // De Párrafo 1 a Párrafo 2
+            if (p1HeartBtn) {
+                p1HeartBtn.addEventListener('click', () => {
+                    textStageP1.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                    setTimeout(() => {
+                        textStageP1.classList.add('hidden');
+                        textStageP2.classList.remove('hidden');
+                        void textStageP2.offsetWidth;
+                        textStageP2.classList.remove('opacity-0');
+                    }, 500);
+                });
+            }
+
+            // De Párrafo 2 a Párrafo 3
+            if (p2HeartBtn) {
+                p2HeartBtn.addEventListener('click', () => {
+                    textStageP2.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                    setTimeout(() => {
+                        textStageP2.classList.add('hidden');
+                        textStageP3.classList.remove('hidden');
+                        void textStageP3.offsetWidth;
+                        textStageP3.classList.remove('opacity-0');
+                    }, 500);
+                });
+            }
+
+            // De Párrafo 3 a Mensaje Final de Aniversario
+            if (p3HeartBtn) {
+                p3HeartBtn.addEventListener('click', () => {
+                    textStageP3.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                    setTimeout(() => {
+                        textStageP3.classList.add('hidden');
+                        textStageAnniversary.classList.remove('hidden');
+                        void textStageAnniversary.offsetWidth;
+                        textStageAnniversary.classList.remove('opacity-0');
+                    }, 500);
+                });
+            }
+
+            createAmbientHearts();
+        });
+    </script>
+</body>
+</html>
